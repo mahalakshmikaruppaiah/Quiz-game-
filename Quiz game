@@ -1,0 +1,42 @@
+def run_quiz(questions):
+    score = 0
+    for q in questions:
+        print("\n" + q["question"])
+        for option in q["options"]:
+            print(option)
+        answer = input("Your answer (A/B/C/D): ").strip().upper()
+        if answer == q["answer"]:
+            print("✅ Correct!")
+            score += 1
+        else:
+            print(f"❌ Wrong. The correct answer was {q['answer']}")
+    print(f"\n🎉 You scored {score} out of {len(questions)}")
+
+quiz_questions = [
+    {
+        "question": "1. What does the 'len()' function do in Python?",
+        "options": ["A. Returns the number of items in an object",
+                    "B. Adds two numbers",
+                    "C. Converts a string to an integer",
+                    "D. Prints output"],
+        "answer": "A"
+    },
+    {
+        "question": "2. What symbol is used to comment a single line in Python?",
+        "options": ["A. //", "B. <!--", "C. #", "D. /*"],
+        "answer": "C"
+    },
+    {
+        "question": "3. Which of the following is a correct variable name in Python?",
+        "options": ["A. 2nd_var", "B. my-var", "C. my_var", "D. class"],
+        "answer": "C"
+    },
+    {
+        "question": "4. Which keyword is used to define a function in Python?",
+        "options": ["A. define", "B. def", "C. function", "D. fun"],
+        "answer": "B"
+    }
+]
+
+if __name__ == "__main__":
+    run_quiz(quiz_questions)
